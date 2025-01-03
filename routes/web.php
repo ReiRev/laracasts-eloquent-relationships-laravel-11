@@ -5,6 +5,10 @@ use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/test', function () {
+    return auth()::class;
+});
+
 Route::get('/', function () {
     // run php artisan migrate:fresh --seed to create a user
     $user = User::find(1);
