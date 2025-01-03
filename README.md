@@ -22,4 +22,21 @@ The following sections will summarize the differences between original video and
 ## Has Many Through
 
 - This is outside the scope of this course, but I wrote [DatabaseSeeder](database/seeders/DatabaseSeeder.php). This would save your time. You can seed the database with `php artisan migrate:fresh --seed`.
-- 
+
+## Polymorphic Relations
+
+- In the video, `watchable_type` was like `App\Series`, but in Laravel 11 it is like `App\Models\Series`
+- Again, I created [DatabaseSeeder](database/seeders/DatabaseSeeder.php).
+- Note: You can create a new relation between a video and a collection like `$video->parent()->associate($collection)->save()`.
+- Note: You can create a new video with the following code.
+
+```php
+$video = new Video([
+    'title' => 'foo',
+    'description' => 'bar',
+    'url' => 'https://reirev.net/images/favicon-32x32.png'
+]);
+$collection = Collection::first();
+$video->parent()->associate($collection);
+$video->save();
+```
