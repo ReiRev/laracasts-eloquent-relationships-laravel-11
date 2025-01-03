@@ -18,3 +18,8 @@ The following sections will summarize the differences between original video and
 ## Many to Many
 
 - Use `$table->foreignIdFor(Post::class)->constrained()->cascadeOnDelete();` instead of `$table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade')`. See [create_post_tag_table](database/migrations/2025_01_03_041312_create_post_tag_table.php).
+
+## Has Many Through
+
+- This is outside the scope of this course, but I wrote [DatabaseSeeder](database/seeders/DatabaseSeeder.php). This would save your time. You can seed the database with `php artisan migrate:fresh --seed`.
+- 
