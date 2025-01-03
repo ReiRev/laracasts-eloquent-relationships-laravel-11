@@ -20,7 +20,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Relation::enforceMorphMap([
+        Relation::morphMap([
             'series' => 'App\Models\Series',
             'collection' => 'App\Models\Collection',
         ]);

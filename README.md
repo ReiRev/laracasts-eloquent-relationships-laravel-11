@@ -40,3 +40,8 @@ $collection = Collection::first();
 $video->parent()->associate($collection);
 $video->save();
 ```
+
+## Many to Many Polymorphic Relations
+
+- `auth()->user()` still works in Laravel 11, but in my development environment it shows an error from intelephense. You can use `Illuminate\Support\Facades\Auth::user()` instead of it.
+- In Laravel 11, Model files are in `app\Models` instead of `app`, so I change the path of the [Likable trait](app/Traits/Likable.php) to `app\Traits`.
